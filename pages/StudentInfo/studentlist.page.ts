@@ -1,6 +1,5 @@
 import { Page } from '@playwright/test';
-
-export class LoginPage {
+export class StudentListPage {
     readonly page: Page;
 
     constructor(page: Page) {
@@ -19,12 +18,13 @@ export class LoginPage {
         await this.page.selectOption(selector,value)
     }
 
-    async login(school:string,username: string, password: string) {
-        await this.selectField('#sltSchool', school);
-        await this.fillField('#iptUsername', username);
-        await this.fillField('#iptPassword', password);
-        await this.clickButton('#btnLogin');
-        await this.page.waitForLoadState('networkidle');
+    async search(year:string , term :string , level:string,classroom:string,seachname:string) {
+        await this.selectField("#sltYear",year)
+        await this.selectField("#sltTerm",term)
+        await this.selectField("#sltLevel",level)
+        await this.selectField("#sltClass",classroom)
+        await this.selectField("#iptStudentName",seachname)
+        await this.clickButton("#btnSearch")
     }
 
 }

@@ -2,15 +2,19 @@
 node_modules/
 
 # Logs
+logs/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+*.log
 
 # Playwright test reports and traces
 test-results/
 playwright-report/
 trace.zip
 *.trace.zip
+*.webm
+*.zip
 
 # Environment variables file (ถ้าเก็บ secret)
 .env
@@ -22,6 +26,8 @@ trace.zip
 .idea/
 .DS_Store
 Thumbs.db
+*.swp
+*.swo
 
 # Build output (ถ้ามี build step)
 dist/
@@ -29,3 +35,12 @@ build/
 
 # Jest cache (ถ้าใช้ Jest ร่วม)
 jest-cache/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Code coverage
+coverage/
+
+# Playwright session state
+storageState.json
